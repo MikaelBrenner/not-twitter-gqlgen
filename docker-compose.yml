@@ -1,0 +1,28 @@
+
+version: '3'
+
+services:
+  server:
+    build: .
+    ports:
+      - 9797:9797
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    restart: always
+    ports:
+      - 5000:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: not-twitter
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+

@@ -30,5 +30,3 @@ The GraphQL Playground(and server) can be accessed at the `/` endpoint, and the 
 - `login`
 - `refreshToken`
 
-
-# not-twitter-gqlgen
